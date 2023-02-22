@@ -86,18 +86,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\CLASSES\FuncionsArxiu.cs">
-      <Link>FuncionsArxiu.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\CLASSES\Log.cs">
-      <Link>Log.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\CLASSES\UserInfo.cs">
-      <Link>UserInfo.cs</Link>
-    </Compile>
+    <Compile Include="FuncionsArxiu.cs" />
     <Compile Include="GeneradorQR.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfo.cs" />
     <Compile Include="VCard.cs" />
     <Compile Include="WordUtils.cs" />
   </ItemGroup>
