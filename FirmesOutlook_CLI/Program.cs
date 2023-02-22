@@ -15,16 +15,14 @@ namespace FirmesOutlook_CLI
     {
 
 
-        // 0.6c
-        /*
-         * Modificada la comprovació per si s'ha d'actualitzar la firma, ara comparem lastwritedata dels
-         * arxius origen i desti
-         */
+        // SERGI PONS - 2023
+        // CREATE OUTLOOK SIGNATURES FROM DOC TEMPLATES
+        // USING DOMAIN USER ATTRIBUTES
 
-        static string versio = "0.9c";
-        static string carpeta_log = @"FirmesOutlook_CLI.txt";
-        static string carpeta_plantilles_firma = @"\\192.168.1.12\it\Compartit\Firmes_Outlook\";
-        static string carpeta_local_plantilles = @"c:\inf";
+        static string versio = "0.9c";                                                              // VERSION
+        static string carpeta_log = @"FirmesOutlook_CLI.txt";                                       // LOCAL LOG FILE
+        static string carpeta_plantilles_firma = @"\\192.168.1.12\it\Compartit\Firmes_Outlook\";    // TEMPLATES FOLDER
+        static string carpeta_local_plantilles = @"c:\inf";                                         // TEMP FOLDER
         static bool document_visible = false;
         static string ERR_plantilla_firma = @"No s'ha pogut copiar l'arxiu de la plantilla";
         static bool actualitzar_firma = true;
@@ -49,7 +47,9 @@ namespace FirmesOutlook_CLI
             UserInfo usuari = new UserInfo();
             firmes = new List<string>();
 
-            // COMPROVEM SI HI HA ARGS
+            // APPLICATION ARGUMENTS
+            // plantilla={template name} - Specify alternative template
+
             foreach (string a in args)
             {
                 if (a.IndexOf("/plantilla=") > -1)
