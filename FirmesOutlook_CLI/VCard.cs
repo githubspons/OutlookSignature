@@ -29,75 +29,7 @@ namespace FirmesOutlook_CLI
             temp_string += "END:VCARD" + Environment.NewLine;
 
             return temp_string;
-            /*
-             BEGIN:VCARD
-             N:Smith;John;
-             TEL;TYPE=work,VOICE:(111) 555-1212
-             TEL;TYPE=home,VOICE:(404) 386-1017
-             TEL;TYPE=fax:(866) 408-1212
-             EMAIL:smith.j@smithdesigns.com
-             ORG:Smith Designs LLC
-             TITLE:Lead Designer
-             ADR;TYPE=WORK,PREF:;;151 Moore Avenue;Grand Rapids;MI;49503;United States of America
-             URL:https://www.smithdesigns.com
-             VERSION:3.0
-             END:VCARD
-            */
-            /*
 
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            Encoding encoding = Encoding.GetEncoding("windows-1252");
-
-            byte[] fileBytes = encoding.GetBytes(temp_string.ToCharArray());
-
-
-
-            using (StreamWriter sw = new StreamWriter(Path.GetTempFileName() + ".sw.vcf"))
-            {
-                sw.Write(temp_string);
-                sw.Close();
-            }
-
-
-            using (FileStream stream = new FileStream(Path.GetTempFileName() + ".fs.vcf", FileMode.Create, FileAccess.ReadWrite))
-            {
-                stream.Write(fileBytes, 0, fileBytes.Length);
-            }
-
-
-            /*
-             BEGIN:VCARD
-            VERSION:3.0
-            FN;CHARSET=UTF-8:Sergi Pons Fabregas
-            N;CHARSET=UTF-8:Fabregas;Sergi;Pons;;
-            EMAIL;CHARSET=UTF-8;type=WORK,INTERNET:spons@vallescar.es
-            TEL;TYPE=CELL:607305691
-            TEL;TYPE=WORK,VOICE:937451372
-            ADR;CHARSET=UTF-8;TYPE=WORK:;;Ctra.Terrassa 225 2 planta;Sabadell;Barcelona;08205;Espanya
-            TITLE;CHARSET=UTF-8:Departament IT
-            ORG;CHARSET=UTF-8:Vallescar Holding
-            URL;type=WORK;CHARSET=UTF-8:www.vallescar.es
-            REV:2022-08-17T08:00:07.796Z
-            END:VCARD
-            */
-
-            //vcard = Encoding.UTF8.GetBytes(temp_string);
-
-            // VCARD A BYTE ARRAY I QR
-            /*
-            var qr = QRCodeWriter.CreateQrCode(fileBytes, 256, QRCodeWriter.QrErrorCorrectionLevel.Low);
-            qr.SaveAsJpeg(temp_file);
-            */
-
-            // URL A QR
-            /*
-            Image logo = Image.FromFile("logo_256.png");
-            var qr = QRCodeWriter.CreateQrCodeWithLogoImage("https://www.vallescar.es", logo);            
-            qr.SaveAsPng(temp_file);
-            */
-            /*
-            return temp_file;
-            */
         }
 
 
